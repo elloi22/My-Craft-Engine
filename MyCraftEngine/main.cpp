@@ -75,11 +75,9 @@ void showItems(std::vector<Recipe>& list) {
 
 void showRecipeRequirements(Chest& chest, Recipe& r) {
 
-    std::cout << "\n=================================\n";
     std::cout << "ITEM: " << r.itemName << "\n";
     std::cout << "REQUIRED TOOL: " << r.station << "\n";
     std::cout << "RECIPE TIER: " << r.tier << "\n";
-    std::cout << "=================================\n";
 
     bool canCraft = true;
 
@@ -113,7 +111,6 @@ void showRecipeRequirements(Chest& chest, Recipe& r) {
             << "\n";
     }
 
-    std::cout << "=================================\n";
 
     if (!canCraft) {
 
@@ -151,9 +148,7 @@ int main() {
 
     while (true) {
 
-        std::cout << "=================================" << '\n';
         std::cout << "          MAIN MENU" << '\n';
-        std::cout << "=================================" << '\n';
         std::cout << "[1] Chest" << '\n';
         std::cout << "[2] Craft Engine" << '\n';
         std::cout << "[3] Save & Exit" << '\n';
@@ -167,9 +162,7 @@ int main() {
 
             while (true) {
 
-                std::cout << "=================================" << '\n';
-                std::cout << "              CHEST" << '\n';
-                std::cout << "=================================" << '\n';
+                std::cout << "          CHEST" << '\n';
                 std::cout << "[1] View Inventory" << '\n';
                 std::cout << "[2] Add Raw Ingredient" << '\n';
                 std::cout << "[3] Back" << '\n';
@@ -179,7 +172,7 @@ int main() {
 
                 if (c == 1) {
 
-                    std::cout << "========== INGREDIENTS ==========" << '\n';
+                    std::cout << "        INGREDIENTS " << '\n';
 
                     if (chest.ingredients.empty()) {
 
@@ -191,7 +184,7 @@ int main() {
                         std::cout << i.name << " - " << i.quantity << "\n";
                     }
 
-                    std::cout << "============= TOOLS =============" << '\n';
+                    std::cout << "        TOOLS " << '\n';
 
                     if (chest.tools.empty()) {
 
@@ -202,7 +195,7 @@ int main() {
                         std::cout << t.name << " Tier " << t.tier << '\n';
                     }
 
-                    std::cout << "============= ITEMS =============" << '\n';
+                    std::cout << "        ITEMS " << '\n';
 
                     if (chest.items.empty()) {
 
@@ -273,9 +266,7 @@ int main() {
 
             while (true) {
 
-                std::cout << "=================================" << '\n';
                 std::cout << "          CRAFT ENGINE" << '\n';
-                std::cout << "=================================" << '\n';
                 std::cout << "[1] Basic Items" << '\n';
                 std::cout << "[2] Advanced Items" << '\n';
                 std::cout << "[3] Superior Items" << '\n';
@@ -290,7 +281,7 @@ int main() {
                     std::vector<Recipe> list =
                         getBasicRecipes();
 
-                    std::cout << "========== BASIC ITEMS ==========" << '\n';
+                    std::cout << "           BASIC ITEMS " << '\n';
 
                     showItems(list);
                     int pick;
@@ -313,7 +304,7 @@ int main() {
                     std::vector<Recipe> list =
                         getAdvancedRecipes();
 
-                    std::cout << "======== ADVANCED ITEMS =========" << '\n';
+                    std::cout << "         ADVANCED ITEMS " << '\n';
 
                     showItems(list);
                     int pick;
@@ -336,7 +327,7 @@ int main() {
                     std::vector<Recipe> list =
                         getSuperiorRecipes();
 
-                    std::cout << "\n======== SUPERIOR ITEMS =========\n";
+                    std::cout << "\n         SUPERIOR ITEMS \n";
 
                     showItems(list);
 
@@ -360,7 +351,7 @@ int main() {
                     std::vector<Recipe> list =
                         getSpecialRecipes();
 
-                    std::cout << "========= SPECIAL ITEMS =========" << '\n';
+                    std::cout << "          SPECIAL ITEMS " << '\n';
 
                     showItems(list);
 
@@ -380,7 +371,7 @@ int main() {
                 }
                 else if (cat == 5) {
 
-                    std::cout << "============= TOOLS =============" << '\n';
+                    std::cout << "              TOOLS " << '\n';
 
                     for (auto& t : chest.tools) {
                         std::cout << t.name << " Tier " << t.tier << '\n';
